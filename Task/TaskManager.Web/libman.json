@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootstrap@5.3.3",
+      "destination": "wwwroot/lib/bootstrap/dist",
+      "files": [
+        "css/bootstrap.min.css",
+        "js/bootstrap.bundle.min.js"
+      ]
+    },
+    {
+      "library": "toastify-js@1.12.0",
+      "destination": "wwwroot/lib/toastify-js",
+      "files": [
+        "toastify.min.css",
+        "toastify.min.js"
+      ]
+    }
+  ]
+} 

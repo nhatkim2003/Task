@@ -1,0 +1,67 @@
+@page "/"
+@using Microsoft.AspNetCore.Components.Authorization
+
+<PageTitle>Trang chủ - Quản lý công việc</PageTitle>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 text-center">
+            <h1 class="display-4 mb-4">Chào mừng đến với Quản lý công việc</h1>
+            <p class="lead mb-4">
+                Hệ thống quản lý công việc thông minh giúp bạn tổ chức và theo dõi các nhiệm vụ một cách hiệu quả.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-list-check display-4 text-primary mb-3"></i>
+                    <h3>Quản lý nhiệm vụ</h3>
+                    <p>Tạo, chỉnh sửa và theo dõi tiến độ công việc một cách dễ dàng.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-calendar-check display-4 text-primary mb-3"></i>
+                    <h3>Lịch trình</h3>
+                    <p>Sắp xếp công việc theo thời gian và ưu tiên.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-graph-up display-4 text-primary mb-3"></i>
+                    <h3>Thống kê</h3>
+                    <p>Theo dõi hiệu suất và tiến độ công việc qua biểu đồ.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2 text-center">
+            <AuthorizeView>
+                <Authorized>
+                    <a href="/tasks" class="btn btn-primary btn-lg">
+                        <i class="bi bi-list-task me-2"></i>Xem danh sách công việc
+                    </a>
+                </Authorized>
+                <NotAuthorized>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
+                        <a href="/register" class="btn btn-primary btn-lg px-4 gap-3">
+                            <i class="bi bi-person-plus me-2"></i>Đăng ký ngay
+                        </a>
+                        <a href="/login" class="btn btn-outline-secondary btn-lg px-4">
+                            <i class="bi bi-box-arrow-in-right me-2"></i>Đăng nhập
+                        </a>
+                    </div>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,77 @@
+@page "/login"
+@inject IAuthService AuthService
+@inject AuthenticationStateProvider AuthProvider
+@inject NavigationManager NavigationManager
+
+@using TaskManager.Web.Models
+
+<h3>Đăng nhập</h3>
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <div class="alert alert-danger">@error</div>
+}
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Tên đăng nhập:</label>
+        <InputText class="form-control" @bind-Value="loginModel.Username" />
+    </div>
+
+    <div class="mb-3">
+        <label>Mật khẩu:</label>
+        <InputText class="form-control" type="password" @bind-Value="loginModel.Password" />
+    </div>
+
+    <button class="btn btn-primary" type="submit" disabled="@isLoading">
+        @if (isLoading)
+        {
+            <span>
+                <span class="spinner-border spinner-border-sm"></span>
+                Đang đăng nhập...
+            </span>
+        }
+        else
+        {
+            <span>Đăng nhập</span>
+        }
+    </button>
+</EditForm>
+
+@code {
+    private LoginRequest loginModel = new();
+    private string? error;
+    private bool isLoading = false;
+
+    private async Task HandleLogin()
+    {
+        try
+        {
+            isLoading = true;
+            error = null;
+            
+            var result = await AuthService.LoginAsync(loginModel);
+
+            if (result.Succeeded)
+            {
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                error = result.Error ?? "Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin.";
+            }
+        }
+        catch (Exception ex)
+        {
+            error = "Có lỗi xảy ra khi đăng nhập. Vui lòng thử lại sau.";
+            Console.WriteLine($"Login error: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

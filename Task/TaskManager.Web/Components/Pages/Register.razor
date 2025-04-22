@@ -1,0 +1,84 @@
+@page "/register"
+@inject IAuthService AuthService
+@inject NavigationManager NavigationManager
+
+@using TaskManager.Web.Models
+
+<h3>Đăng ký</h3>
+
+@if (!string.IsNullOrEmpty(error))
+{
+    <div class="alert alert-danger">@error</div>
+}
+@if (!string.IsNullOrEmpty(success))
+{
+    <div class="alert alert-success">@success</div>
+}
+
+<EditForm Model="registerModel" OnValidSubmit="HandleRegister">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label>Tên đăng nhập:</label>
+        <InputText class="form-control" @bind-Value="registerModel.Username" />
+    </div>
+
+    <div class="mb-3">
+        <label>Mật khẩu:</label>
+        <InputText class="form-control" type="password" @bind-Value="registerModel.Password" />
+    </div>
+
+    <button class="btn btn-primary" type="submit" disabled="@isLoading">
+        @if (isLoading)
+        {
+            <span>
+                <span class="spinner-border spinner-border-sm"></span>
+                Đang đăng ký...
+            </span>
+        }
+        else
+        {
+            <span>Đăng ký</span>
+        }
+    </button>
+</EditForm>
+
+@code {
+    private LoginRequest registerModel = new();
+    private string? error;
+    private string? success;
+    private bool isLoading = false;
+
+    private async Task HandleRegister()
+    {
+        try 
+        {
+            isLoading = true;
+            error = null;
+            success = null;
+            
+            var result = await AuthService.RegisterAsync(registerModel);
+
+            if (result.Succeeded)
+            {
+                success = "Đăng ký thành công! Đang chuyển hướng...";
+                await Task.Delay(2000);
+                NavigationManager.NavigateTo("/login");
+            }
+            else
+            {
+                error = result.Error ?? "Đăng ký thất bại. Vui lòng thử lại.";
+            }
+        }
+        catch (Exception ex)
+        {
+            error = "Có lỗi xảy ra khi đăng ký. Vui lòng thử lại sau.";
+            Console.WriteLine($"Register error: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}

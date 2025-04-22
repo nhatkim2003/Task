@@ -1,0 +1,52 @@
+﻿@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Authorization
+@using TaskManager.Web.Services.Auth
+@inject IAuthService AuthService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Quản lý công việc</PageTitle>
+
+<div class="page">
+    <div class="sidebar">
+        <NavMenu />
+    </div>
+
+    <main>
+        <div class="top-row px-4">
+            <AuthorizeView>
+                <Authorized>
+                    <div class="d-flex align-items-center">
+                        <span class="me-3">Xin chào, @context.User.Identity?.Name!</span>
+                        <button class="btn btn-outline-primary" @onclick="HandleLogout">
+                            Đăng xuất
+                        </button>
+                    </div>
+                </Authorized>
+                <NotAuthorized>
+                    <div>
+                        <a href="/login" class="btn btn-outline-primary me-2">Đăng nhập</a>
+                        <a href="/register" class="btn btn-primary">Đăng ký</a>
+                    </div>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+
+        <article class="content px-4">
+            @Body
+        </article>
+    </main>
+</div>
+
+<div id="blazor-error-ui" class="alert alert-danger" role="alert">
+    An unhandled error has occurred.
+    <a href="" class="reload">Reload</a>
+    <a class="dismiss">🗙</a>
+</div>
+
+@code {
+    private async Task HandleLogout()
+    {
+        await AuthService.LogoutAsync();
+        NavigationManager.NavigateTo("/login");
+    }
+}

@@ -1,0 +1,28 @@
+@page "/index"
+@using Microsoft.AspNetCore.Components.Authorization
+
+<PageTitle>Trang chủ - Quản lý công việc</PageTitle>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="jumbotron">
+                <h1 class="display-4">Chào mừng đến với Quản lý công việc</h1>
+                <p class="lead">Hệ thống giúp bạn quản lý công việc hiệu quả hơn.</p>
+                <hr class="my-4">
+                <p>Bắt đầu bằng cách đăng nhập hoặc đăng ký tài khoản mới.</p>
+                <AuthorizeView>
+                    <Authorized>
+                        <a class="btn btn-primary btn-lg" href="/tasks" role="button">Xem danh sách công việc</a>
+                    </Authorized>
+                    <NotAuthorized>
+                        <div>
+                            <a class="btn btn-primary btn-lg me-2" href="/login" role="button">Đăng nhập</a>
+                            <a class="btn btn-outline-primary btn-lg" href="/register" role="button">Đăng ký</a>
+                        </div>
+                    </NotAuthorized>
+                </AuthorizeView>
+            </div>
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,101 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Task\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|c:\\users\\user\\desktop\\task\\taskmanager.web\\components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|solutionrelative:taskmanager.web\\components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|c:\\users\\user\\desktop\\task\\taskmanager.web\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|solutionrelative:taskmanager.web\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|c:\\users\\user\\desktop\\task\\taskmanager.web\\services\\auth\\customauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|solutionrelative:taskmanager.web\\services\\auth\\customauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|c:\\users\\user\\desktop\\task\\taskmanager.web\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|solutionrelative:taskmanager.web\\services\\auth\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|c:\\users\\user\\desktop\\task\\taskmanager.web\\services\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E72AE77-D1FA-40C0-9AB8-82E8488BB7EC}|TaskManager.Web\\TaskManager.Web.csproj|solutionrelative:taskmanager.web\\services\\auth\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 136,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 17,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Components\\Pages\\Register.razor",
+              "RelativeDocumentMoniker": "TaskManager.Web\\Components\\Pages\\Register.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Components\\Pages\\Register.razor",
+              "RelativeToolTip": "TaskManager.Web\\Components\\Pages\\Register.razor",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T03:38:09.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomAuthStateProvider.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Services\\Auth\\CustomAuthStateProvider.cs",
+              "RelativeDocumentMoniker": "TaskManager.Web\\Services\\Auth\\CustomAuthStateProvider.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Services\\Auth\\CustomAuthStateProvider.cs",
+              "RelativeToolTip": "TaskManager.Web\\Services\\Auth\\CustomAuthStateProvider.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwEMAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:39:09.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Services\\Auth\\IAuthService.cs",
+              "RelativeDocumentMoniker": "TaskManager.Web\\Services\\Auth\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Services\\Auth\\IAuthService.cs",
+              "RelativeToolTip": "TaskManager.Web\\Services\\Auth\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:39:07.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.razor",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "TaskManager.Web\\Components\\Pages\\Login.razor",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "TaskManager.Web\\Components\\Pages\\Login.razor",
+              "ViewState": "AgIAACgAAAAAAAAAAAAAwC4AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T07:39:00.9Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Services\\Auth\\AuthService.cs",
+              "RelativeDocumentMoniker": "TaskManager.Web\\Services\\Auth\\AuthService.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Task\\TaskManager.Web\\Services\\Auth\\AuthService.cs",
+              "RelativeToolTip": "TaskManager.Web\\Services\\Auth\\AuthService.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAuwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T07:38:26.07Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

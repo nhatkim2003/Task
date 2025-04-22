@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "TaskManager.Api\\TaskManager.Api.csproj",
+        "Action": "StartWithoutDebugging"
+      },
+      {
+        "Path": "TaskManager.Web\\TaskManager.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

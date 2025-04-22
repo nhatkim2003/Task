@@ -1,0 +1,35 @@
+@inject ITaskService TaskService
+@inject IToastService ToastService
+
+<h3>Danh sách công việc</h3>
+
+@if (tasks == null)
+{
+    <p><em>Đang tải dữ liệu...</em></p>
+}
+else
+{
+    <ul>
+        @foreach (var task in tasks)
+        {
+            <li>@task.Title - @(task.IsCompleted ? "✔" : "❌")</li>
+        }
+    </ul>
+}
+
+@code {
+    private IEnumerable<TodoTask>? tasks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            tasks = await TaskService.GetTasksAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Lỗi khi tải task: {ex.Message}");
+            ToastService.ShowError("Không thể tải danh sách công việc.");
+        }
+    }
+}

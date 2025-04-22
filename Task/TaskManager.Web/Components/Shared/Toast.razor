@@ -1,0 +1,74 @@
+@if (IsVisible)
+{
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header @BackgroundClass text-white">
+                <i class="@IconClass me-2"></i>
+                <strong class="me-auto">@Title</strong>
+                <button type="button" class="btn-close btn-close-white" @onclick="Hide" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                @Message
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public string Title { get; set; } = "";
+    [Parameter] public string Message { get; set; } = "";
+    [Parameter] public ToastType Type { get; set; } = ToastType.Success;
+    [Parameter] public int AutoHideDelayMs { get; set; } = 3000;
+
+    private bool IsVisible { get; set; }
+    private System.Threading.Timer? AutoHideTimer { get; set; }
+
+    private string BackgroundClass => Type switch
+    {
+        ToastType.Success => "bg-success",
+        ToastType.Error => "bg-danger",
+        ToastType.Warning => "bg-warning",
+        ToastType.Info => "bg-info",
+        _ => "bg-primary"
+    };
+
+    private string IconClass => Type switch
+    {
+        ToastType.Success => "bi bi-check-circle",
+        ToastType.Error => "bi bi-x-circle",
+        ToastType.Warning => "bi bi-exclamation-triangle",
+        ToastType.Info => "bi bi-info-circle",
+        _ => "bi bi-bell"
+    };
+
+    public void Show()
+    {
+        IsVisible = true;
+        StartAutoHideTimer();
+        StateHasChanged();
+    }
+
+    public void Hide()
+    {
+        IsVisible = false;
+        AutoHideTimer?.Dispose();
+        StateHasChanged();
+    }
+
+    private void StartAutoHideTimer()
+    {
+        AutoHideTimer?.Dispose();
+        AutoHideTimer = new System.Threading.Timer(_ =>
+        {
+            InvokeAsync(Hide);
+        }, null, AutoHideDelayMs, System.Threading.Timeout.Infinite);
+    }
+
+    public enum ToastType
+    {
+        Success,
+        Error,
+        Warning,
+        Info
+    }
+} 
